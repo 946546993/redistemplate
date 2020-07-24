@@ -17,7 +17,10 @@ public class StringTest {
     @Resource
     private RedisTemplate redisTemplate;
     private StringRedisTemplate stringRedisTemplate;
-
+    //如果提示需要关闭保护模式，再redis conf 文件中设置protocd mode no ，注释掉默认的ip地址，已经关闭防火墙，开启防火墙的端口号为：6379（你默认的redis端口号） 。如果还是提示报错，就使用：
+    //./redis-server ../redis conf &    就是使用配置文件启动，并在window下使用
+    //telnet 192.168.241.132（你的虚拟机ip地址） 6379（你的redis端口号）
+    //进行测试是否可以正常连接
     /**
      * String类型的设置和取值
      * 偏移量：你从底几位开始设置值
