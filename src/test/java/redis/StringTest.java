@@ -20,7 +20,7 @@ public class StringTest {
 
     /**
      * String类型的设置和取值
-     * 偏移量
+     * 偏移量：你从底几位开始设置值
      */
     @Test
     public void StringTest1() {
@@ -48,6 +48,13 @@ public class StringTest {
         // 如果键不存在，则它被创建并设置为空字符串，因此APPEND在这种特殊情况下将类似于SET。
         redisTemplate.opsForValue().append("name3", "1");
         System.out.println(redisTemplate.opsForValue().get("name3"));
+
+        //自增1
+        redisTemplate.opsForValue().increment("name",1);
+        //自减1
+        redisTemplate.opsForValue().increment("name",-1);
+        //查看当前的key是什么类型
+        redisTemplate.type("name");
     }
 
     /**

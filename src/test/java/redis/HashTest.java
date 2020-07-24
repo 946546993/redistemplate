@@ -21,6 +21,7 @@ public class HashTest {
     private RedisTemplate redisTemplate;
 
 
+
     /**
      * void put(H key, HK hashKey, HV value);
      * void putAll(H key, Map<? extends HK, ? extends HV> m);
@@ -28,6 +29,7 @@ public class HashTest {
      */
     @Test
     public void hashTest1() {
+
         //设置散列hashKey的值
         redisTemplate.opsForHash().put("hash1", "name", "张三");
 
